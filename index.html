@@ -2,74 +2,110 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Présentation du projet Echø</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Echø - Le Réseau Social Libre et Respectueux</title>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Text:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
-    <header>
-        <h1>Projet de Réseau Social : Echø</h1>
-        <p>Un réseau social simple, libre et respectueux de la vie privée</p>
+
+    <header class="header">
+        <div class="container">
+            <h1>Echø</h1>
+            <nav>
+                <a href="#about">À Propos</a>
+                <a href="#vision">Vision</a>
+                <a href="#support" class="cta-link">Soutien</a>
+            </nav>
+        </div>
     </header>
+
     <main>
-        <section>
-            <h2>À propos</h2>
-            <p>
-                Je suis un jeune développeur de 16 ans passionné par le code et les projets web.<br>
-                Je travaille sur la création d’un réseau social différent, pensé pour être simple, libre et respectueux de la vie privée.<br>
-                L’idée est de redonner à chacun la possibilité de s’exprimer sans être filtré ou contrôlé par un algorithme.
-            </p>
-        </section>
-        <section>
-            <h2>Vision</h2>
-            <ul>
-                <li>Un fil d’actualité chronologique, sans tri automatique.</li>
-                <li>Le respect total des données personnelles.</li>
-                <li>Une vraie liberté d’expression, sans censure injuste.</li>
-                <li>Une communauté basée sur la créativité et le respect.</li>
-                <li>Un système équitable pour les créateurs de contenu.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Objectifs</h2>
-            <ul>
-                <li>Développer une plateforme web complète (HTML, CSS, JavaScript, PHP).</li>
-                <li>Héberger le projet sur un service fiable et abordable.</li>
-                <li>Offrir une interface claire, rapide et agréable à utiliser.</li>
-                <li>Créer des outils simples pour les profils, les messages et les groupes.</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Soutien</h2>
-            <p>
-                Le projet est entièrement indépendant et financé par mes propres moyens.<br>
-                J’ai besoin d’un coup de main pour couvrir les frais d’hébergement et poursuivre le développement.<br>
-                Chaque aide compte pour faire avancer ce projet.
-            </p>
-        </section>
-        <section>
-            <h2>Stack technique</h2>
-            <div class="stack">
-                <strong>Frontend :</strong> HTML5, CSS3, JavaScript<br>
-                <strong>Backend :</strong> PHP / Node.js (à confirmer)<br>
-                <strong>Données :</strong> fichiers JSON ou base SQLite<br>
-                <strong>Hébergement :</strong> CloudFlares (phase de test)
+
+        <section class="hero-section text-center">
+            <h2 class="title-large">Echø : Redonner la parole.</h2>
+            <p class="subtitle">Le réseau social simple, libre et **respectueux de votre vie privée**.</p>
+            <div class="cta-group">
+                <a href="https://discord.gg/5KypvVDqSq" target="_blank" class="button primary">Rejoindre la Communauté (Discord)</a>
+                <a href="#vision" class="button secondary">Découvrir la Vision</a>
+            </div>
+            <div class="mockup-card">
+                <div class="mockup-content">
+                    <span class="mockup-icon">👤</span>
+                    <p>Un fil d'actu vraiment chronologique.</p>
+                </div>
             </div>
         </section>
-        <section>
-            <h2>Auteur</h2>
-            <p class="author">
-                Noxa, 16 ans<br>
-                Développeur indépendant<br>
-                Nîmes
-            </p>
+
+        <section id="about" class="section-card developer-section">
+            <div class="container">
+                <h3 class="card-title">Le Développeur derrière Echø</h3>
+                <p>Je suis un jeune développeur de **16 ans** passionné par le code et les projets web, basé à **Nîmes**.</p>
+                <p>Echø est né de la volonté de créer une alternative : un réseau social différent, pensé pour être simple, libre et respectueux.</p>
+                <p class="author-info">— Noxa, Développeur indépendant</p>
+            </div>
         </section>
-        <section>
-            <h2>Nom du réseau social</h2>
-            <p><strong>Echø</strong></p>
-            <p>Url (bientôt) : <a href="https://echo.com" target="_blank">echo.com</a></p>
-            <p>Serveur Discord : <a href="https://discord.gg/5KypvVDqSq" target="_blank">discord.gg/5KypvVDqSq</a></p>
+
+        <section id="vision" class="section-vision">
+            <div class="container grid-2">
+                <div class="card-vision">
+                    <span class="icon-large">🕊️</span>
+                    <h4 class="vision-title">Liberté & Simplicité</h4>
+                    <p>Un fil d’actualité **chronologique**, sans tri ou contrôle par un algorithme.</p>
+                </div>
+                <div class="card-vision">
+                    <span class="icon-large">🔒</span>
+                    <h4 class="vision-title">Vie Privée Totale</h4>
+                    <p>Le **respect total** de vos données personnelles. Vous êtes l'utilisateur, pas le produit.</p>
+                </div>
+                <div class="card-vision">
+                    <span class="icon-large">💡</span>
+                    <h4 class="vision-title">Communauté Créative</h4>
+                    <p>Une communauté basée sur la **créativité** et le respect. Pas de censure injuste.</p>
+                </div>
+                <div class="card-vision">
+                    <span class="icon-large">⚖️</span>
+                    <h4 class="vision-title">Système Équitable</h4>
+                    <p>Un système juste et transparent pour les **créateurs de contenu**.</p>
+                </div>
+            </div>
         </section>
+
+        <section class="section-goals">
+            <div class="container grid-2">
+                <div>
+                    <h3 class="section-title">Objectifs Clés</h3>
+                    <ul class="list-bullet">
+                        <li>Développer une plateforme web complète (HTML, CSS, JS, PHP).</li>
+                        <li>Offrir une interface **claire, rapide et agréable** à utiliser.</li>
+                        <li>Créer des outils simples pour les profils, messages et groupes.</li>
+                    </ul>
+                </div>
+                <div class="tech-stack-card">
+                    <h3 class="section-title">Stack Technique</h3>
+                    <p><strong>Frontend :</strong> HTML5, CSS3, JavaScript</p>
+                    <p><strong>Backend :</strong> PHP / Node.js (à confirmer)</p>
+                    <p><strong>Données :</strong> Fichiers JSON ou base SQLite</p>
+                    <p><strong>Hébergement :</strong> CloudFlares (phase de test)</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="support" class="section-card support-section text-center">
+            <div class="container">
+                <h3 class="card-title">Soutenez le Projet Echø</h3>
+                <p>Le projet est entièrement indépendant. Votre aide est essentielle pour couvrir les frais d’hébergement et le développement.</p>
+                <p>Chaque contribution permet de faire avancer Echø vers sa version finale.</p>
+                <a href="#" class="button primary large">Faire un Don / Contribuer (À venir)</a>
+                <p class="small-info">URL Prévue : **echo.com** (Bientôt)</p>
+            </div>
+        </section>
+
     </main>
+
+    <footer class="footer">
+        <p>© 2025 Echø | Projet Open-Source et Indépendant</p>
+    </footer>
+
 </body>
 </html>
