@@ -8,7 +8,7 @@
     --text-main: #1d1d1f; /* Noir très sombre */
     --text-secondary: #6e6e73; /* Gris chaud */
     --border-color: rgba(0, 0, 0, 0.05);
-    --border-radius-main: 14px;
+    --border-radius-main: 18px; /* Plus grands arrondis pour un look plus doux */
     --border-radius-button: 999px;
 }
 
@@ -52,7 +52,7 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 
 .text-center { text-align: center; }
 
-/* --- Header & Navigation (Flou) --- */
+/* --- Header & Navigation --- */
 .header {
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
@@ -133,17 +133,8 @@ section {
     padding-bottom: 80px;
 }
 
-/* Contenu des cartes d'information */
+/* Style de Base pour les BLOCS/CARDS (info-block) */
 .info-block {
-    background-color: var(--card-bg);
-    border-radius: 20px;
-    max-width: 90%;
-    margin: 80px auto;
-    padding: 60px 80px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Ombre ultra-légère */
-    border: 1px solid var(--border-color);
-    
-    /* Animation JS */
     opacity: 0; 
     transform: translateY(20px);
     transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -154,10 +145,20 @@ section {
     transform: translateY(0);
 }
 
+/* Les BLOCS Apple (Grandes Cartes de Contenu) */
+.large-card {
+    background-color: var(--card-bg);
+    border-radius: 24px; /* Encore plus grand */
+    max-width: 90%;
+    margin: 80px auto;
+    padding: 70px 90px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); /* Ombre douce */
+    border: 1px solid var(--border-color);
+}
+
 /* --- Mockup (Minimaliste) --- */
 .mockup-container {
     padding-top: 80px;
-    perspective: 1000px;
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -205,7 +206,7 @@ section {
 
 /* --- Section Développeur --- */
 .dev-info {
-    max-width: 800px;
+    max-width: 900px; /* Légèrement plus petit que les autres large-card */
 }
 
 .dev-details {
@@ -272,13 +273,18 @@ section {
     margin-bottom: 8px;
 }
 
-/* --- Section Détails Techniques --- */
+/* --- Section Détails Techniques (À l'intérieur de large-card) --- */
+.details-section {
+    padding-top: 50px; /* Ajuster padding pour la large card */
+    padding-bottom: 50px;
+}
+
 .details-section .detail-card {
-    padding: 30px;
-    background-color: var(--card-bg);
-    border-radius: var(--border-radius-main);
+    padding: 25px;
+    background-color: var(--background-light); /* Fond très légèrement différent pour les sous-cartes */
+    border-radius: 12px;
     border: 1px solid var(--border-color);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
 }
 
 .detail-title {
@@ -356,7 +362,7 @@ section {
     .title-large { font-size: 52px; }
     .subtitle { font-size: 24px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .info-block { padding: 40px; }
+    .large-card { padding: 40px; }
     .mockup-card { height: 250px; }
     .mockup-content p { font-size: 16px; }
     .cta-section { padding: 80px 0; }
