@@ -1,13 +1,15 @@
 /* Fichier style.css */
 
-/* --- Référence Graphique Apple --- */
+/* --- Variables de Design Pur Apple-like --- */
 :root {
-    --apple-blue: #007aff;
-    --apple-gray-light: #f5f5f7;
-    --apple-gray-dark: #333333;
-    --white: #ffffff;
-    --border-radius-card: 18px;
-    --padding-section: 100px 20px;
+    --primary-blue: #007aff; 
+    --background-light: #f9f9fb; /* Quasi-blanc */
+    --card-bg: #ffffff; 
+    --text-main: #1d1d1f; /* Noir très sombre */
+    --text-secondary: #6e6e73; /* Gris chaud */
+    --border-color: rgba(0, 0, 0, 0.05);
+    --border-radius-main: 14px;
+    --border-radius-button: 999px;
 }
 
 * {
@@ -17,62 +19,48 @@
 }
 
 body {
-    font-family: 'SF Pro Text', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     line-height: 1.6;
-    color: var(--apple-gray-dark);
-    background-color: var(--white); /* Beaucoup de blanc ! */
+    color: var(--text-main);
+    background-color: var(--background-light); 
     -webkit-font-smoothing: antialiased;
 }
 
 .container {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 24px;
 }
 
-/* --- Typographie --- */
-h1 {
-    font-weight: 700;
-    font-size: 28px;
-    color: var(--apple-gray-dark);
-}
-
-h2 {
-    font-weight: 700;
-    font-size: 44px;
-    margin-bottom: 15px;
-}
-
-h3 {
-    font-weight: 600;
-    font-size: 26px;
-    margin-bottom: 15px;
-}
+/* --- Typographie Générale --- */
+.logo { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
+h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 
 .title-large {
-    font-size: 56px;
-    font-weight: 700;
-    letter-spacing: -0.03em;
+    font-size: 72px;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    margin-bottom: 24px;
 }
 
 .subtitle {
-    font-size: 24px;
-    color: #555;
-    margin-bottom: 40px;
+    font-size: 28px;
+    color: var(--text-secondary);
+    margin-bottom: 60px;
+    font-weight: 400;
 }
 
-.text-center {
-    text-align: center;
-}
+.text-center { text-align: center; }
 
-/* --- Header & Navigation --- */
+/* --- Header & Navigation (Flou) --- */
 .header {
     padding: 15px 0;
-    border-bottom: 1px solid var(--apple-gray-light);
-    background-color: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(10px); 
     position: sticky;
     top: 0;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .header .container {
@@ -83,283 +71,300 @@ h3 {
 
 .header nav a {
     text-decoration: none;
-    color: var(--apple-gray-dark);
-    font-weight: 400;
-    margin-left: 25px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-left: 30px;
     transition: color 0.2s ease;
 }
 
-.header nav a:hover {
-    color: var(--apple-blue);
-}
+.header nav a:hover { color: var(--primary-blue); }
 
 .cta-link {
-    background-color: var(--apple-blue);
-    color: var(--white) !important;
-    padding: 8px 15px;
-    border-radius: 999px;
+    background-color: var(--primary-blue);
+    color: var(--card-bg) !important;
+    padding: 8px 18px;
+    border-radius: var(--border-radius-button);
     font-weight: 600 !important;
 }
 
 /* --- Boutons (CTA) --- */
 .button {
     display: inline-block;
-    padding: 12px 25px;
-    margin: 0 10px;
+    padding: 18px 40px;
     text-decoration: none;
-    border-radius: 999px; /* Bords très arrondis */
+    border-radius: var(--border-radius-button);
     font-weight: 600;
-    font-size: 16px;
+    font-size: 19px;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .button.primary {
-    background-color: var(--apple-blue);
-    color: var(--white);
-    border: 2px solid var(--apple-blue);
+    background-color: var(--primary-blue);
+    color: var(--card-bg);
+    border: 2px solid var(--primary-blue);
 }
 
 .button.primary:hover {
-    background-color: #005bb5;
-    border-color: #005bb5;
+    background-color: #0066cc;
+    border-color: #0066cc;
+    transform: translateY(-1px);
 }
 
 .button.secondary {
-    background-color: transparent;
-    color: var(--apple-blue);
-    border: 2px solid var(--apple-blue);
+    background-color: var(--card-bg);
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
 }
 
 .button.secondary:hover {
-    background-color: var(--apple-blue);
-    color: var(--white);
+    background-color: var(--primary-blue);
+    color: var(--card-bg);
+    transform: translateY(-1px);
 }
 
-.button.large {
-    padding: 15px 35px;
-    font-size: 18px;
-}
-
-.cta-group {
-    margin-bottom: 50px;
-}
-
-/* --- Sections Générales (Layout Aéré) --- */
+/* --- Sections & Layout --- */
 section {
-    padding: var(--padding-section);
+    padding: 120px 0;
 }
 
-/* Section Héro */
 .hero-section {
     padding-top: 150px;
-    padding-bottom: 150px;
+    padding-bottom: 80px;
 }
 
-/* --- Cartes (Simuler des éléments Apple) --- */
-.section-card {
-    background-color: var(--apple-gray-light);
-    border-radius: var(--border-radius-card);
-    padding: 50px;
-    margin: 60px auto;
+/* Contenu des cartes d'information */
+.info-block {
+    background-color: var(--card-bg);
+    border-radius: 20px;
+    max-width: 90%;
+    margin: 80px auto;
+    padding: 60px 80px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03); /* Ombre ultra-légère */
+    border: 1px solid var(--border-color);
+    
+    /* Animation JS */
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 0.7s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.card-title {
-    color: var(--apple-blue);
-    margin-bottom: 20px;
+.info-block.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-.developer-section {
+/* --- Mockup (Minimaliste) --- */
+.mockup-container {
+    padding-top: 80px;
+    perspective: 1000px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s cubic-bezier(0.2, 0.8, 0.2, 1), transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.mockup-container.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.mockup-card {
+    width: 90%;
+    max-width: 600px;
+    height: 320px;
+    background: linear-gradient(135deg, #e0e0e5, #ffffff);
+    border-radius: 24px;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
+    border: 1px solid rgba(255, 255, 255, 0.7); 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mockup-content {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+    backdrop-filter: blur(5px);
+}
+
+.mockup-icon {
+    font-size: 30px;
+    margin-right: 20px;
+}
+
+.mockup-content p {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--text-main);
+}
+
+/* --- Section Développeur --- */
+.dev-info {
     max-width: 800px;
 }
 
-.author-info {
-    font-style: italic;
-    color: #888;
-    margin-top: 20px;
+.dev-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
-/* Vision en grille */
-.section-vision {
-    background-color: var(--white);
-    padding: 80px 20px;
+.pitch-text {
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.signature {
+    margin-top: 20px;
+    font-size: 14px;
+    color: var(--text-secondary);
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+}
+
+.signature span:first-child {
+    font-weight: 600;
+    display: block;
+}
+
+/* --- Grilles de Principes / Détails --- */
+.principles-grid {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    max-width: 100%;
 }
 
 .grid-2 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
+    gap: 25px;
 }
 
-.card-vision {
-    background-color: var(--apple-gray-light);
+.grid-3 {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 25px;
+}
+
+.card-principle {
+    background-color: var(--card-bg);
     padding: 30px;
-    border-radius: 12px;
-    text-align: left;
+    border-radius: var(--border-radius-main);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
 }
 
 .icon-large {
-    font-size: 30px;
+    font-size: 36px;
     display: block;
+    margin-bottom: 10px;
+}
+
+.principle-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+/* --- Section Détails Techniques --- */
+.details-section .detail-card {
+    padding: 30px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-main);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
+}
+
+.detail-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--primary-blue);
     margin-bottom: 15px;
 }
 
-.vision-title {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--apple-gray-dark);
-}
-
-/* Objectifs et Stack */
-.section-goals {
-    padding: 80px 20px;
-}
-
-.list-bullet {
-    list-style-type: '• ';
+.list-check {
+    list-style-type: '✓ ';
     padding-left: 20px;
-    margin-left: 10px;
+    margin-left: 5px;
+    font-size: 16px;
 }
 
-.list-bullet li {
-    margin-bottom: 10px;
-    font-size: 17px;
-}
+.list-check li { margin-bottom: 8px; }
 
-.tech-stack-card {
-    padding: 30px;
-    border: 1px solid var(--apple-gray-light);
-    border-radius: var(--border-radius-card);
-}
-
-.tech-stack-card p {
+.stack-card p, .url-card p {
+    font-size: 15px;
     margin-bottom: 5px;
 }
 
-/* Mockup Simulé (Pour la référence graphique) */
-.mockup-card {
-    width: 60%;
-    max-width: 500px;
-    height: 150px;
-    background: linear-gradient(135deg, #e9ecef, #dee2e6); /* Gradient léger */
-    border-radius: var(--border-radius-card);
-    margin: 40px auto 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); /* Ombre très douce */
-    border: 1px solid rgba(255, 255, 255, 0.5); /* Bordure interne légère */
-    backdrop-filter: blur(10px); /* Effet "translucide" */
+.big-status {
+    font-size: 28px;
+    font-weight: 700;
+    margin-top: 10px;
+    color: var(--primary-blue);
 }
 
-.mockup-content {
-    background-color: var(--white);
-    padding: 20px 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    display: flex;
-    align-items: center;
+.small-status {
+    font-size: 13px;
+    color: var(--text-secondary);
 }
 
-.mockup-icon {
-    font-size: 24px;
-    margin-right: 15px;
+/* --- Section CTA Finale --- */
+.cta-section {
+    background-color: var(--primary-blue);
+    color: var(--card-bg);
+    padding: 100px 0;
 }
 
-.mockup-content p {
-    font-weight: 600;
-    color: var(--apple-gray-dark);
+.cta-title {
+    color: var(--card-bg);
 }
 
-/* Soutien Final */
-.support-section {
-    max-width: 900px;
-    background-color: var(--apple-blue);
-    color: var(--white);
-    box-shadow: 0 15px 40px rgba(0, 122, 255, 0.2);
+.cta-subtitle {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 22px;
+    margin-bottom: 40px;
 }
 
-.support-section .card-title {
-    color: var(--white);
+.cta-section .button.secondary {
+    background-color: var(--card-bg);
+    color: var(--primary-blue);
+    border-color: var(--card-bg);
 }
 
-.support-section .button.primary {
-    background-color: var(--white);
-    color: var(--apple-blue);
-    border: none;
-    margin-top: 20px;
+.cta-section .button.secondary:hover {
+    background-color: #f0f0f0;
 }
-
-.support-section .button.primary:hover {
-    background-color: #e6e6e6;
-}
-
-.small-info {
-    margin-top: 20px;
-    font-size: 14px;
-    opacity: 0.8;
-}
-
 
 /* --- Footer --- */
 .footer {
     text-align: center;
     padding: 30px 20px;
-    border-top: 1px solid var(--apple-gray-light);
     font-size: 14px;
-    color: #888;
+    color: var(--text-secondary);
+    background-color: var(--background-light);
+    border-top: 1px solid var(--border-color);
 }
 
+/* --- Responsive --- */
+@media (max-width: 900px) {
+    .title-large { font-size: 52px; }
+    .subtitle { font-size: 24px; }
+    .grid-2, .grid-3 { grid-template-columns: 1fr; }
+    .info-block { padding: 40px; }
+    .mockup-card { height: 250px; }
+    .mockup-content p { font-size: 16px; }
+    .cta-section { padding: 80px 0; }
+}
 
-/* Responsive pour les petits écrans */
-@media (max-width: 768px) {
-    :root {
-        --padding-section: 60px 20px;
-    }
-
-    .title-large {
-        font-size: 40px;
-    }
-
-    .subtitle {
-        font-size: 18px;
-    }
-    
-    .grid-2 {
-        grid-template-columns: 1fr;
-    }
-
-    .header .container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .header nav {
-        margin-top: 10px;
-    }
-
-    .header nav a {
-        margin: 0 8px;
-    }
-    
-    .cta-group {
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .button {
-        width: 100%;
-        margin: 0;
-    }
-    
-    .mockup-card {
-        width: 90%;
-        height: 100px;
-    }
-
-    .mockup-content {
-        padding: 15px 20px;
-    }
+@media (max-width: 500px) {
+    .title-large { font-size: 38px; }
+    .subtitle { font-size: 18px; }
+    .header nav a { margin-left: 15px; }
+    .button.large { padding: 15px 30px; font-size: 17px; }
 }
