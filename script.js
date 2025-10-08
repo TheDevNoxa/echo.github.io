@@ -1,6 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- Fonctionnalité de Bascule de Thème ---
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
 
@@ -18,21 +17,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 1. Initialisation au chargement
     const currentTheme = localStorage.getItem('theme');
     
     if (currentTheme) {
-        // Utilise la préférence utilisateur
         updateTheme(currentTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        // Utilise la préférence système (mode sombre)
         updateTheme('dark-mode');
     } else {
-        // Thème par défaut
         updateTheme('light-mode');
     }
 
-    // 2. Gestion du clic
     themeToggle.addEventListener('click', () => {
         const isCurrentlyDark = htmlElement.classList.contains('dark-mode');
         
@@ -43,8 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-
-    // --- Fonctionnalité de Défilement Fluide ---
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -54,7 +46,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // --- Fonctionnalité de Révélation au Défilement ---
     const sectionsToObserve = document.querySelectorAll('[data-scroll]');
 
     const observer = new IntersectionObserver((entries, observer) => {
