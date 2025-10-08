@@ -1,14 +1,11 @@
-/* Fichier style.css */
-
-/* --- Variables de Design Pur Apple-like --- */
 :root {
     --primary-blue: #007aff; 
-    --background-light: #f9f9fb; /* Quasi-blanc */
+    --background-light: #f9f9fb;
     --card-bg: #ffffff; 
-    --text-main: #1d1d1f; /* Noir très sombre */
-    --text-secondary: #6e6e73; /* Gris chaud */
+    --text-main: #1d1d1f;
+    --text-secondary: #6e6e73;
     --border-color: rgba(0, 0, 0, 0.05);
-    --border-radius-main: 18px; /* Plus grands arrondis pour un look plus doux */
+    --border-radius-main: 18px;
     --border-radius-button: 999px;
 }
 
@@ -32,7 +29,6 @@ body {
     padding: 0 24px;
 }
 
-/* --- Typographie Générale --- */
 .logo { font-size: 26px; font-weight: 700; letter-spacing: -0.02em; }
 h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 
@@ -52,7 +48,6 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 
 .text-center { text-align: center; }
 
-/* --- Header & Navigation --- */
 .header {
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
@@ -87,7 +82,6 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     font-weight: 600 !important;
 }
 
-/* --- Boutons (CTA) --- */
 .button {
     display: inline-block;
     padding: 18px 40px;
@@ -123,7 +117,6 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     transform: translateY(-1px);
 }
 
-/* --- Sections & Layout --- */
 section {
     padding: 120px 0;
 }
@@ -133,7 +126,6 @@ section {
     padding-bottom: 80px;
 }
 
-/* Style de Base pour les BLOCS/CARDS (info-block) */
 .info-block {
     opacity: 0; 
     transform: translateY(20px);
@@ -145,18 +137,18 @@ section {
     transform: translateY(0);
 }
 
-/* Les BLOCS Apple (Grandes Cartes de Contenu) */
+/* Ajustement: Réduction du padding vertical sur les grandes cartes */
 .large-card {
     background-color: var(--card-bg);
-    border-radius: 24px; /* Encore plus grand */
+    border-radius: 24px;
     max-width: 90%;
     margin: 80px auto;
-    padding: 70px 90px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05); /* Ombre douce */
+    /* Ancien: 70px 90px; Nouveau: 50px 80px; */
+    padding: 50px 80px; 
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
 }
 
-/* --- Mockup (Minimaliste) --- */
 .mockup-container {
     padding-top: 80px;
     opacity: 0;
@@ -204,9 +196,8 @@ section {
     color: var(--text-main);
 }
 
-/* --- Section Développeur --- */
 .dev-info {
-    max-width: 900px; /* Légèrement plus petit que les autres large-card */
+    max-width: 900px;
 }
 
 .dev-details {
@@ -233,7 +224,6 @@ section {
     display: block;
 }
 
-/* --- Grilles de Principes / Détails --- */
 .principles-grid {
     background-color: transparent;
     box-shadow: none;
@@ -273,15 +263,15 @@ section {
     margin-bottom: 8px;
 }
 
-/* --- Section Détails Techniques (À l'intérieur de large-card) --- */
 .details-section {
-    padding-top: 50px; /* Ajuster padding pour la large card */
+    /* Maintient le padding ajusté de large-card */
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
 .details-section .detail-card {
     padding: 25px;
-    background-color: var(--background-light); /* Fond très légèrement différent pour les sous-cartes */
+    background-color: var(--background-light);
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
@@ -320,7 +310,6 @@ section {
     color: var(--text-secondary);
 }
 
-/* --- Section CTA Finale --- */
 .cta-section {
     background-color: var(--primary-blue);
     color: var(--card-bg);
@@ -347,7 +336,6 @@ section {
     background-color: #f0f0f0;
 }
 
-/* --- Footer --- */
 .footer {
     text-align: center;
     padding: 30px 20px;
@@ -357,12 +345,12 @@ section {
     border-top: 1px solid var(--border-color);
 }
 
-/* --- Responsive --- */
 @media (max-width: 900px) {
     .title-large { font-size: 52px; }
     .subtitle { font-size: 24px; }
     .grid-2, .grid-3 { grid-template-columns: 1fr; }
-    .large-card { padding: 40px; }
+    /* Ajustement media query */
+    .large-card { padding: 30px; }
     .mockup-card { height: 250px; }
     .mockup-content p { font-size: 16px; }
     .cta-section { padding: 80px 0; }
