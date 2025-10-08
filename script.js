@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Fonctionnalité de Bascule de Thème ---
     const themeToggle = document.getElementById('theme-toggle');
     const htmlElement = document.documentElement;
-    const currentTheme = localStorage.getItem('theme');
 
     const updateTheme = (theme) => {
         if (theme === 'dark-mode') {
@@ -19,17 +18,21 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // 1. Applique le thème au chargement (stocké ou système)
+    // 1. Initialisation au chargement
+    const currentTheme = localStorage.getItem('theme');
+    
     if (currentTheme) {
+        // Utilise la préférence utilisateur
         updateTheme(currentTheme);
     } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        // Utilise la préférence système (mode sombre)
         updateTheme('dark-mode');
     } else {
-        // Initialiser en light-mode si aucune préférence
+        // Thème par défaut
         updateTheme('light-mode');
     }
 
-    // 2. Gestion du clic sur le bouton
+    // 2. Gestion du clic
     themeToggle.addEventListener('click', () => {
         const isCurrentlyDark = htmlElement.classList.contains('dark-mode');
         
