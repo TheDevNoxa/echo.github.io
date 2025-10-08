@@ -1,5 +1,4 @@
 :root {
-    /* Style Jour (Défaut) */
     --primary-blue: #007aff; 
     --background-light: #f9f9fb;
     --card-bg: #ffffff; 
@@ -14,7 +13,6 @@
 }
 
 :root.dark-mode {
-    /* Style Nuit (Couleurs Apple Dark Mode) */
     --primary-blue: #0a84ff;
     --background-light: #1c1c1e;
     --card-bg: #2c2c2e;
@@ -66,7 +64,6 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 
 .text-center { text-align: center; }
 
-/* --- Header & Bouton Theme --- */
 .header {
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
@@ -87,9 +84,9 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 .main-nav {
     display: flex;
     align-items: center;
-    flex-grow: 1; /* Permet à la navigation de prendre l'espace */
-    justify-content: flex-end; /* Alignement à droite */
-    margin-right: 15px; /* Espace avant le bouton de thème */
+    flex-grow: 1;
+    justify-content: flex-end;
+    margin-right: 15px;
 }
 
 .main-nav a {
@@ -108,10 +105,9 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     padding: 8px 18px;
     border-radius: var(--border-radius-button);
     font-weight: 600 !important;
-    margin-right: 0; /* Réinitialisation pour un meilleur contrôle */
+    margin-right: 0;
 }
 
-/* Style Apple : Bouton propre et sans bordure */
 #theme-toggle {
     background: transparent;
     border: none;
@@ -125,14 +121,13 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     justify-content: center;
     padding: 0;
     transition: opacity 0.2s;
-    flex-shrink: 0; /* Empêche le bouton de rétrécir */
+    flex-shrink: 0;
 }
 
 #theme-toggle:hover {
     opacity: 0.7;
 }
 
-/* --- Boutons (CTA) --- */
 .button {
     display: inline-block;
     padding: 18px 40px;
@@ -168,7 +163,6 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     transform: translateY(-1px);
 }
 
-/* --- Sections & Layout --- */
 section {
     padding: 120px 0;
 }
@@ -200,7 +194,6 @@ section {
     transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* --- Mockup (Le bloc qui a été agrandi) --- */
 .mockup-container {
     padding-top: 80px;
     opacity: 0;
@@ -254,7 +247,6 @@ section {
     flex-grow: 1;
 }
 
-/* --- Dev Info et Principes --- */
 .dev-info {
     max-width: 900px;
 }
