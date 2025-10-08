@@ -1,12 +1,29 @@
 :root {
+    /* Style Jour (Défaut) */
     --primary-blue: #007aff; 
     --background-light: #f9f9fb;
     --card-bg: #ffffff; 
     --text-main: #1d1d1f;
     --text-secondary: #6e6e73;
     --border-color: rgba(0, 0, 0, 0.05);
+    --header-bg: rgba(255, 255, 255, 0.85);
+    --mockup-gradient: linear-gradient(135deg, #e0e0e5, #ffffff);
+    --mockup-inner-bg: rgba(255, 255, 255, 0.9);
     --border-radius-main: 18px;
     --border-radius-button: 999px;
+}
+
+:root.dark-mode {
+    /* Style Nuit (Couleurs Apple Dark Mode) */
+    --primary-blue: #0a84ff;
+    --background-light: #1c1c1e;
+    --card-bg: #2c2c2e;
+    --text-main: #f2f2f7;
+    --text-secondary: #aeaeb3;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --header-bg: rgba(28, 28, 30, 0.85);
+    --mockup-gradient: linear-gradient(135deg, #242426, #303032);
+    --mockup-inner-bg: rgba(44, 44, 46, 0.9);
 }
 
 :where(body) {
@@ -21,6 +38,7 @@ body {
     color: var(--text-main);
     background-color: var(--background-light); 
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .container {
@@ -51,16 +69,22 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
 .header {
     padding: 15px 0;
     border-bottom: 1px solid var(--border-color);
-    background-color: rgba(255, 255, 255, 0.85); 
+    background-color: var(--header-bg); 
     backdrop-filter: blur(10px); 
     position: sticky;
     top: 0;
     z-index: 1000;
+    transition: background-color 0.3s;
 }
 
 .header .container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.header nav {
+    display: flex;
     align-items: center;
 }
 
@@ -80,6 +104,28 @@ h3 { font-size: 32px; font-weight: 700; margin-bottom: 40px; }
     padding: 8px 18px;
     border-radius: var(--border-radius-button);
     font-weight: 600 !important;
+    margin-right: 15px;
+}
+
+/* Style Apple : Bouton propre et sans bordure */
+#theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-main);
+    font-size: 20px; 
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin-left: 10px;
+    transition: opacity 0.2s;
+}
+
+#theme-toggle:hover {
+    opacity: 0.7;
 }
 
 .button {
@@ -145,6 +191,7 @@ section {
     padding: 50px 80px; 
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
     border: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .mockup-container {
@@ -163,7 +210,7 @@ section {
     width: 90%;
     max-width: 800px; 
     height: 350px;
-    background: linear-gradient(135deg, #e0e0e5, #ffffff);
+    background: var(--mockup-gradient);
     border-radius: 24px;
     margin: 0 auto;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); 
@@ -171,32 +218,33 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background 0.3s, border-color 0.3s;
 }
 
 .mockup-content {
-    background-color: rgba(255, 255, 255, 0.9);
-    /* Ancien: padding: 30px 50px; */
-    padding: 20px 35px; /* Réduit un peu le padding horizontal pour laisser width agir */
-    width: 80%; /* Prend 90% de la largeur du parent */
+    background-color: var(--mockup-inner-bg);
+    padding: 25px 35px;
+    width: 90%; 
     border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     backdrop-filter: blur(5px);
-    text-align: left; /* Alignement du texte à gauche */
+    text-align: left;
+    transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 .mockup-icon {
     font-size: 36px;
     margin-right: 25px;
-    flex-shrink: 0; /* Empêche l'icône de rétrécir */
+    flex-shrink: 0;
 }
 
 .mockup-content p {
     font-weight: 500;
     font-size: 20px;
     color: var(--text-main);
-    flex-grow: 1; /* Permet au texte de prendre l'espace restant */
+    flex-grow: 1;
 }
 
 .dev-info {
@@ -252,6 +300,7 @@ section {
     border-radius: var(--border-radius-main);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
     border: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .icon-large {
@@ -277,6 +326,7 @@ section {
     border-radius: 12px;
     border: 1px solid var(--border-color);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 .detail-title {
@@ -345,6 +395,7 @@ section {
     color: var(--text-secondary);
     background-color: var(--background-light);
     border-top: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
 @media (max-width: 900px) {
@@ -357,7 +408,7 @@ section {
         max-width: 90%; 
     }
     .mockup-content {
-        padding: 20px 25px; /* Ajuste pour mobile */
+        padding: 20px 25px;
     }
     .mockup-content p { font-size: 18px; }
     .cta-section { padding: 80px 0; }
@@ -369,5 +420,3 @@ section {
     .header nav a { margin-left: 15px; }
     .button.large { padding: 15px 30px; font-size: 17px; }
 }
-
-
