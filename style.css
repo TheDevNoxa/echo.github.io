@@ -176,7 +176,7 @@ section {
 .mockup-content {
     background-color: rgba(255, 255, 255, 0.9);
     /* Ancien: padding: 30px 50px; */
-    padding: 25px 35px; /* Réduit un peu le padding horizontal pour laisser width agir */
+    padding: 20px 35px; /* Réduit un peu le padding horizontal pour laisser width agir */
     width: 80%; /* Prend 90% de la largeur du parent */
     border-radius: 14px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -369,4 +369,5 @@ section {
     .header nav a { margin-left: 15px; }
     .button.large { padding: 15px 30px; font-size: 17px; }
 }
+
 
